@@ -8,6 +8,6 @@ import java.util.Date;
  * Created by Denis on 5/25/2015.
  */
 public interface Stamp {
-    public Address getPostOfficeAddress();
-    public Date getStampDate();
+    public Address getPostOfficeAddress(); // Get post office address
+    public Date getStampDate();            // Get stamp date
 }

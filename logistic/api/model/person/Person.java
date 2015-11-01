@@ -7,6 +7,6 @@ import com.logistic.api.model.person.FullName;
  * Created by Denis on 5/25/2015.
  */
 public interface Person {
-    public Address getAddress();
-    public FullName getFullName();
+    public Address getAddress();     // get address sender
+    public FullName getFullName();   // get Full name sender
 }

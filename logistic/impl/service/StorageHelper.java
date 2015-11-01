@@ -16,16 +16,16 @@ import java.util.Random;
  *
  */
 public class StorageHelper {
-    public static final String TRANSIT_PREFIX = "_transit";
-    public static final String POST_OFFICES_KEY = "postOffices";
-    public static final String ADDRESSES_KEY = "addresses";
-    public static final String DELIVERY_TRANSPORTS_KEY = "deliveryTransports";
-    public static final String AVAILABLE_TRANSITS_KEY = "transits";
+    public static final String TRANSIT_PREFIX = "_transit"; // initialization transit prefix
+    public static final String POST_OFFICES_KEY = "postOffices"; // initialization post office key
+    public static final String ADDRESSES_KEY = "addresses"; // initialization address key
+    public static final String DELIVERY_TRANSPORTS_KEY = "deliveryTransports"; // initialization delivery transport key
+    public static final String AVAILABLE_TRANSITS_KEY = "transits"; // initialization available transits key
 
-    public static void initializeData() {
+    public static void initializeData() { // initialization date
         Random random = new Random();
 
-        Storage.getInstance().putToStorage(ADDRESSES_KEY, Arrays.asList(
+        Storage.getInstance().putToStorage(ADDRESSES_KEY, Arrays.asList( // initialization country
                 new Address("Street 1", "City 1", "Country 1", 0),
                 new Address("Street 2", "City 2", "Country 1", 1),
                 new Address("Street 3", "City 3", "Country 1", 2),
@@ -34,9 +34,9 @@ public class StorageHelper {
                 new Address("Street 6", "City 6", "Country 2", 5),
                 new Address("Street 7", "City 7", "Country 3", 6),
                 new Address("Street 8", "City 7", "Country 3", 7),
-                new Address("Invalid Street", "Invalid City", "Invalid Country", 7)
+                new Address("Invalid Street", "Invalid City", "Invalid Country", 7) // throw exception
         ));
-        Storage.getInstance().putToStorage(POST_OFFICES_KEY, Arrays.asList(
+        Storage.getInstance().putToStorage(POST_OFFICES_KEY, Arrays.asList(  // initialization post office
                 new com.logistic.impl.model.post.PostOffice(new Address("Street 1", "City 1", "Country 1", 0), Package.Type.T_30, 30, new Point(0, 0)),
                 new com.logistic.impl.model.post.PostOffice(new Address("Street 2", "City 2", "Country 1", 1), Package.Type.T_30, 60, new Point(2, 3)),
                 new com.logistic.impl.model.post.PostOffice(new Address("Street 3", "City 3", "Country 1", 2), Package.Type.T_30, 45, new Point(5, 6)),
@@ -46,7 +46,7 @@ public class StorageHelper {
                 new com.logistic.impl.model.post.PostOffice(new Address("Street 7", "City 7", "Country 3", 6), Package.Type.T_30, 96, new Point(9, 15)),
                 new com.logistic.impl.model.post.PostOffice(new Address("Street 8", "City 7", "Country 3", 7), Package.Type.T_30, 56, new Point(9, 15))
         ));
-        Storage.getInstance().putToStorage(DELIVERY_TRANSPORTS_KEY, Arrays.asList(
+        Storage.getInstance().putToStorage(DELIVERY_TRANSPORTS_KEY, Arrays.asList( // initialization delivery
                 new com.logistic.impl.model.transport.DeliveryTransport(DeliveryTransport.Type.LAND, getByPostCode(0), getByPostCode(1)),
                 new com.logistic.impl.model.transport.DeliveryTransport(DeliveryTransport.Type.LAND, getByPostCode(0), getByPostCode(2)),
                 new com.logistic.impl.model.transport.DeliveryTransport(DeliveryTransport.Type.LAND, getByPostCode(0), getByPostCode(7)),
@@ -60,7 +60,7 @@ public class StorageHelper {
                 new com.logistic.impl.model.transport.DeliveryTransport(DeliveryTransport.Type.LAND, getByPostCode(4), getByPostCode(6)),
                 new com.logistic.impl.model.transport.DeliveryTransport(DeliveryTransport.Type.LAND, getByPostCode(0), getByPostCode(6))
         ));
-        Storage.getInstance().putToStorage(AVAILABLE_TRANSITS_KEY, Arrays.asList(
+        Storage.getInstance().putToStorage(AVAILABLE_TRANSITS_KEY, Arrays.asList( // initialization available
                 //from 0 to 1
                 new com.logistic.impl.model.transport.Transit(Arrays.asList(
                         getByPostCode(0), getByPostCode(1)), random.nextInt(100) + 20),
@@ -275,7 +275,7 @@ public class StorageHelper {
     public static List<PostOffice> getAllOffices() {
         return Storage.getInstance().<List>getById(POST_OFFICES_KEY);
     }
-
+        // write get all office in list post office
     public static List<DeliveryTransport> getDeliveryTransports() {
         return Storage.getInstance().<List>getById(DELIVERY_TRANSPORTS_KEY);
     }
@@ -283,13 +283,13 @@ public class StorageHelper {
     public static List<Transit> getTransits() {
         return Storage.getInstance().<List>getById(AVAILABLE_TRANSITS_KEY);
     }
-
-    public static void saveParcelTransit(Package parcel, Transit transit) {
+        // write gat transits in list transit
+    public static void saveParcelTransit(Package parcel, Transit transit) {//constructor save parcel transit
         Storage.getInstance().putToStorage(parcel.getPackageId(), parcel);
         Storage.getInstance().putToStorage(parcel.getPackageId() + TRANSIT_PREFIX, transit);
     }
 
-    public static PostOffice getByPostCode(int code) {
+    public static PostOffice getByPostCode(int code) { // get by post code post office
         List<PostOffice> offices = Storage.getInstance().<List>getById(POST_OFFICES_KEY);
         for(PostOffice postOffice : offices) {
             if(postOffice.getAddress().getCode() == code) {

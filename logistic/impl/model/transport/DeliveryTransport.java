@@ -5,29 +5,30 @@ import com.logistic.api.model.post.PostOffice;
 /**
  *
  */
-public class DeliveryTransport implements com.logistic.api.model.transport.DeliveryTransport {
-    private Type type;
-    private PostOffice startOffice;
-    private PostOffice destinationOffice;
+public class DeliveryTransport implements com.logistic.api.model.transport.DeliveryTransport { // delivery implements logistic
+    private Type type;  // initialization type
+    private PostOffice startOffice; // initialization start post office
+    private PostOffice destinationOffice; // initialization destination office
 
-    public DeliveryTransport(Type type, PostOffice startOffice, PostOffice destinationOffice) {
-        this.type = type;
-        this.startOffice = startOffice;
-        this.destinationOffice = destinationOffice;
+    public DeliveryTransport(Type type, PostOffice startOffice, PostOffice destinationOffice) { // constructor delivery transport
+        this.type = type; // initialization type delivery
+        this.startOffice = startOffice; // initialization start office
+        this.destinationOffice = destinationOffice; // initialization destination office
     }
 
     @Override
     public Type getType() {
         return this.type;
     }
-
+    // override method get type delivery
     @Override
     public PostOffice getStartPostOffice() {
         return this.startOffice;
     }
-
+    // override method get start office
     @Override
     public PostOffice getDestinationPostOffice() {
         return this.destinationOffice;
     }
+    // override method get destination post office
 }
