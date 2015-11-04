@@ -1,6 +1,8 @@
-package com.logistic.api.model.post;
+package com.logistic.api.model.post.impl;
 
 import com.logistic.api.model.person.Address;
+import com.logistic.api.model.post.*;
+import com.logistic.api.model.post.Package;
 
 import java.awt.*;
 

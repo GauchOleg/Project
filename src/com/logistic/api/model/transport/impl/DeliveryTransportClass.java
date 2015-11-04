@@ -1,6 +1,7 @@
-package com.logistic.api.model.transport;
+package com.logistic.api.model.transport.impl;
 
 import com.logistic.api.model.post.PostOffice;
+import com.logistic.api.model.transport.DeliveryTransport;
 
 /**
  * Created by Oleg on 03.11.2015.

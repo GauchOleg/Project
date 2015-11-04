@@ -1,14 +1,15 @@
-package com.logistic.api.model.post;
+package com.logistic.api.model.post.impl;
 
 import com.logistic.api.model.person.Address;
 import com.logistic.api.model.person.FullName;
+import com.logistic.api.model.post.*;
 
 import java.util.List;
 
 /**
  * Created by Oleg on 03.11.2015.
  */
-public class PackageClass implements Package {
+public class PackageClass implements com.logistic.api.model.post.Package {
     @Override
     public String getPackageId() {
         return null;
