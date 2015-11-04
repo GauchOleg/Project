@@ -8,14 +8,18 @@ import java.util.List;
 /**
  * Created by Oleg on 03.11.2015.
  */
-public class TransitClass implements Transit {
-    @Override
-    public List<PostOffice> getTransitOffices() {
-        return null;
-    }
+public abstract class TransitClass implements Transit {
+    Transit transit = new Transit() {
+        @Override
+        public List<PostOffice> getTransitOffices() {
+            return this.getTransitOffices();
+        }
 
-    @Override
-    public double getPrice() {
-        return 0;
-    }
+        @Override
+        public double getPrice() {
+            return this.getPrice();
+        }
+    };
+    List postOffise = transit.getTransitOffices();
+    double getPrice = transit.getPrice();
 }

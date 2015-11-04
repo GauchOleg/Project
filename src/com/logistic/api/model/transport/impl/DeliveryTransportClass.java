@@ -6,19 +6,24 @@ import com.logistic.api.model.transport.DeliveryTransport;
 /**
  * Created by Oleg on 03.11.2015.
  */
-public class DeliveryTransportClass implements DeliveryTransport {
-    @Override
-    public Type getType() {
-        return null;
-    }
+public abstract class DeliveryTransportClass implements DeliveryTransport {
+    DeliveryTransport deliveryTransport = new DeliveryTransport() {
+        @Override
+        public Type getType() {
+            return this.getType();
+        }
 
-    @Override
-    public PostOffice getStartPostOffice() {
-        return null;
-    }
+        @Override
+        public PostOffice getStartPostOffice() {
+            return this.getDestinationPostOffice();
+        }
 
-    @Override
-    public PostOffice getDestinationPostOffice() {
-        return null;
-    }
+        @Override
+        public PostOffice getDestinationPostOffice() {
+            return this.getDestinationPostOffice();
+        }
+    };
+    Type type = deliveryTransport.getType();
+    PostOffice getDestinationPosrOffice = deliveryTransport.getDestinationPostOffice();
+    PostOffice getStartPostOffice = deliveryTransport.getStartPostOffice();
 }
