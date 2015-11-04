@@ -1,7 +1,5 @@
 package com.logistic.api;
 
-import com.logistic.api.model.post.*;
-import com.logistic.api.model.post.Package;
 import com.logistic.api.service.Storage;
 
 import java.util.ArrayList;

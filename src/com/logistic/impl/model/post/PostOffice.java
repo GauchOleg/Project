@@ -1,7 +1,6 @@
 package com.logistic.impl.model.post;
 
 import com.logistic.api.model.person.Address;
-import com.logistic.api.model.post.*;
 import com.logistic.api.model.post.Package;
 import com.logistic.api.model.post.Stamp;
 
@@ -11,7 +10,7 @@ import java.util.Date;
 /**
  *
  */
-public class PostOffice implements com.logistic.api.model.post.PostOffice { // post office implement logistic
+public class PostOffice implements com.logistic.api.model.post.PostOffice { // post office implement com.logistic
     private Address address; // initialization address
     private Package.Type acceptableType; // to set acceptable type
     private int maxWeight; // initialization max weight package

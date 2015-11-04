@@ -6,7 +6,7 @@ import com.logistic.api.model.person.Address;
 /**
  *
  */
-public class Person implements com.logistic.api.model.person.Person, FullName {  // class person implements logistic package
+public class Person implements com.logistic.api.model.person.Person, FullName {  // class person implements com.logistic package
     private Address address;                                                     // address receiver
     private String firstName;                                                    // first name receiver
     private String lastName;                                                     // last name receiver

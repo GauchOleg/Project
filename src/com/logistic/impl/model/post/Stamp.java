@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  *
  */
-public class Stamp implements com.logistic.api.model.post.Stamp { // class stamp implements logistic
+public class Stamp implements com.logistic.api.model.post.Stamp { // class stamp implements com.logistic
     private Address postOfficeAddress; // initialization address post office witch help constructor
     private Date stampDate; // initialization stamp date witch help constructor
 

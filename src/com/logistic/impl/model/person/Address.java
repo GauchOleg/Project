@@ -3,7 +3,7 @@ package com.logistic.impl.model.person;
 /**
  *
  */
-public class Address implements com.logistic.api.model.person.Address {     // address implements logistic
+public class Address implements com.logistic.api.model.person.Address {     // address implements com.logistic
     private String street;                                                  // street receiver
     private String city;                                                    // city receiver
     private String country;                                                 // country receiver

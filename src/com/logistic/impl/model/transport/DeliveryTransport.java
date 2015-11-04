@@ -5,7 +5,7 @@ import com.logistic.api.model.post.PostOffice;
 /**
  *
  */
-public class DeliveryTransport implements com.logistic.api.model.transport.DeliveryTransport { // delivery implements logistic
+public class DeliveryTransport implements com.logistic.api.model.transport.DeliveryTransport { // delivery implements com.logistic
     private Type type;  // initialization type
     private PostOffice startOffice; // initialization start post office
     private PostOffice destinationOffice; // initialization destination office

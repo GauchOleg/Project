@@ -1,6 +1,5 @@
 package com.logistic.impl;
 
-import com.logistic.api.model.post.*;
 import com.logistic.api.model.transport.Transit;
 import com.logistic.api.service.SenderService;
 import com.logistic.impl.model.exception.PackageNotFound;

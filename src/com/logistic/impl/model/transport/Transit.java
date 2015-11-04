@@ -9,7 +9,7 @@ import java.util.List;
 /**
  *
  */
-public class Transit implements com.logistic.api.model.transport.Transit { // class transit implements logistic
+public class Transit implements com.logistic.api.model.transport.Transit { // class transit implements com.logistic
     private final List<PostOffice> offices; // initialization list post office
     private final double price; // initialization price
 

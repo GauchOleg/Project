@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  *
  */
-public class Package implements com.logistic.api.model.post.Package {           // package implements logistic
+public class Package implements com.logistic.api.model.post.Package {           // package implements com.logistic
     private String id;                                                          // Id package
     private int weight;                                                         // weight package
     private Type type;                                                          // type package
